@@ -1,70 +1,84 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer components {
+  /**
+    * Styled buttons
+    */
+  .btn {
+    @apply rounded-md px-6 py-2 border flex items-center justify-center gap-2 border-none hover:opacity-60;
   }
-  a:hover {
-    color: #747bff;
+  .btn-primary {
+    @apply bg-blue-600;
   }
-  button {
-    background-color: #f9f9f9;
+  .btn-secondary {
+    @apply bg-gray-600;
+  }
+  .btn-success {
+    @apply bg-green-600;
+  }
+  .btn-danger {
+    @apply bg-red-600;
+  }
+  .btn-warning {
+    @apply bg-yellow-600;
+  }
+  .btn-info {
+    @apply bg-teal-600;
+  }
+  .btn-light {
+    @apply bg-slate-50;
+  }
+  .btn-dark {
+    @apply bg-black;
+  }
+
+  /**
+    * Styled texts
+    */
+
+  .text-primary {
+    @apply text-blue-600;
+  }
+  .text-secondary {
+    @apply text-gray-600;
+  }
+  .text-success {
+    @apply text-green-600;
+  }
+  .text-danger {
+    @apply text-red-600;
+  }
+  .text-warning {
+    @apply text-yellow-600;
+  }
+  .text-info {
+    @apply text-teal-600;
+  }
+  .text-light {
+    @apply text-slate-50;
+  }
+  .text-dark {
+    @apply text-black;
+  }
+
+  /**
+    * Styled modals
+    */
+  .modal-xs {
+    @apply sm:w-[500px];
+  }
+  .modal-sm {
+    @apply sm:w-[500px];
+  }
+  .modal-md {
+    @apply sm:w-[500px];
+  }
+  .modal-lg {
+    @apply sm:w-[500px];
+  }
+  .modal-xl {
+    @apply sm:w-[500px];
   }
 }

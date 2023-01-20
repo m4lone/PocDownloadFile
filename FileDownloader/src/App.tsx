@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { Info } from 'phosphor-react'
 import { useState } from 'react'
-import './App.css'
-import reactLogo from './assets/react.svg'
+import { ModalContent } from './components/Modal/ModalContent'
+
 
 interface data {
 
@@ -57,28 +58,48 @@ deleteddAt: ${data.deleteddAt}
 
       })
   }
+
+  const handleOnClickConfirm = () => {
+    console.log("teste")
+  }
+
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => getData()}>
           Download File
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="card">
+
+        <ModalContent
+          modal={{
+            title: "Are you sure?",
+            description:
+              "Do you really want to delete these records? This process cannot be undone.",
+            icon: <Info size={80} className="text-info" />,
+
+          }}
+          button={{
+            title: "Alert Modal",
+            icon: <Info size={18} className="text-light" />,
+            backgroundColor: "btn-primary",
+            textColor: "text-light",
+          }}
+          buttonConfirmModal={{
+            title: "Confirm",
+            onClick: () => handleOnClickConfirm,
+            backgroundColor: "btn-info",
+            textColor: "text-light",
+          }}
+        >
+          teste
+        </ModalContent>
+
+        <button onClick={() => getData()}>
+          Open Receipt
+        </button>
+      </div>
     </div>
   )
 }
